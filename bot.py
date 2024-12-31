@@ -2,7 +2,7 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
-from config import TOKEN
+from config import TOKEN, API 
 import requests
 
 logging.basicConfig(level=logging.INFO)
@@ -21,7 +21,7 @@ async def speller(message: types.Message):
         await message.answer("Пожалуйста, отправьте текст для проверки.")
         return
     
-    url = 'https://speller.yandex.net/services/spellservice.json/checkText'
+    url = API
     params = {
         'text': text,
     }
